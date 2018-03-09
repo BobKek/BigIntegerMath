@@ -120,16 +120,16 @@ public class BigNumber {
 	}
 	public int CompareTo(BigNumber b) {
 		int n1, n2;
-		if(this.sign < b.sign)
+		if(sign < b.sign)
 			return 1;
-		if(this.sign > b.sign)
+		if(sign > b.sign)
 			return -1;
 		if(sign == 0) {
-			if(this.num.length() > b.num.length())
+			if(num.length() > b.num.length())
 				return 1;
-			if(this.num.length() < b.num.length())
+			if(num.length() < b.num.length())
 				return -1;
-			for(int i = 0; i < num.length() && i < b.num.length(); i++) {
+			for(int i = 0; i < num.length(); i++) {
 				n1 = num.charAt(i) - '0';
 				n2 = b.num.charAt(i) - '0';
 				if(n1 > n2)
@@ -139,13 +139,13 @@ public class BigNumber {
 			}
 		}
 		if(sign == 1) {
-			if(this.num.length() > b.num.length())
+			if(num.length() > b.num.length())
 				return 1;
-			if(this.num.length() < b.num.length())
+			if(num.length() < b.num.length())
 				return -1;
-			for(int i = 0; i < num.length() && i < b.num.length(); i++) {
+			for(int i = 0; i < num.length(); i++) {
 				n1 = num.charAt(i) - '0';
-				n2 = num.charAt(i) - '0';
+				n2 = b.num.charAt(i) - '0';
 				if(n1 > n2)
 					return -1;
 				if(n1 < n2)
